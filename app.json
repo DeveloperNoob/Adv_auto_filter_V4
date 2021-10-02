@@ -1,0 +1,70 @@
+{
+    "name": "Auto Filter Bot V2",
+    "description": "A Filter Bot Which Doesnt Need Manuall Filter Adding",
+    "logo": "https://telegra.ph/file/667e15c821117633d07bd.png",
+    "keywords": [
+        "Auto",
+        "Filter",
+        "Mongo DB"
+    ],
+    "website": "https://github.com/AlbertEinsteinTG",
+    "repository": "https://github.com/AlbertEinsteinTG/Adv-Auto-Filter-Bot-V2",
+    "success_url": "https://telegram.dog/CrazyBotsz",
+    "env": {
+        "APP_ID": {
+            "description": "Your APP ID From my.telegram.org or @UseTGXBot",
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "Your API Hash From my.telegram.org or @UseTGXBot",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "Your Bot Token From @BotFather",
+            "value": ""
+        },
+        "DB_URI": {
+            "description": "Your Mongo DB URL Obtained From mongodb.com",
+            "value": ""
+        },
+        "KITTUMO": {
+            "description": "Ayakko kitto sadhanangal 🤣",
+            "value": "ayakko kitto kittumo tharo tharumo ayakkamo send undo undaavo"
+        },
+        "EXPELL": {
+            "description": "The words if contained should be rejected",
+            "value": "movie Movie"
+        },
+        "FORCE_SUB_CHANNEL": {
+            "description": "The channel you want people to subscribe",
+            "value": "-1001509515080"
+        },
+        "GROUP_ID": {
+            "description": "The id of your group where bot is active",
+            "value": "-1001168288182"
+        },
+        "IN_EXPELL": {
+           "description": "The words in Expelled you're okay with",
+           "value": "scary Scary emoji Emoji"
+        },
+        "OWNER_ID": {
+           "description": "You're id",
+           "value": "1093541873"
+        },
+        "USER_SESSION": {
+            "description": "A Pyrogram User Session String. Generated From @PyrogramStringBot",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
