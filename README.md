@@ -6,7 +6,7 @@ You can deploy this bot anywhere.
 
 <i>**[Watch Deploying Tutorial...](https://youtu.be/KTearEPhumc)**</i>
 
-<a href="https://heroku.com/deploy?template=https://github.com/ONLYMOVIE76/Autofilter">
+<a href="https://heroku.com/deploy?template=https://github.com/DeveloperNoob/Adv_auto_filter_V4">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
