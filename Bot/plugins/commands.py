@@ -12,6 +12,8 @@ db = Database()
 
 @Client.on_message(filters.command(["start"]) & filters.private, group=1)
 async def start(bot, update):
+    if not await db.is_user_exist(update.from_user.id):
+        await db.add_user(update.from_user.id)   
     
     try:
         file_uid = update.command[1]
