@@ -1,3 +1,5 @@
+import re
+import datetime
 import os
 import motor.motor_asyncio # pylint: disable=import-error
 from bot import DB_URI
@@ -12,10 +14,29 @@ class Database:
         self.col = self.db["Main"]
         self.acol = self.db["Active_Chats"]
         self.fcol = self.db["Filter_Collection"]
+        self.dcol = self.db.users
         
         self.cache = {}
         self.acache = {}
-
+    def new_user(self, id):
+        return dict(
+            id = id,
+            join_date = datetime.date.today().isoformat()
+        )
+    async def add_user(self, id):
+        user = self.new_user(id)
+        await self.dcol.insert_one(user)
+    async def is_user_exist(self, id):
+        user = await self.dcol.find_one({'id':int(id)})
+        return True if user else False
+    async def total_users_count(self):
+        count = await self.dcol.count_documents({})
+        return count
+    async def get_all_users(self):
+        all_users = self.dcol.find({})
+        return all_users
+    async def delete_user(self, user_id):
+        await self.dcol.delete_many({'id': int(user_id)})
 
     async def create_index(self):
         """
@@ -494,5 +515,4 @@ class Database:
         A Funtion to count total filters of a group
         """
         return await self.fcol.count_documents({"group_id": group_id})
-
 
